@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+
+	 <!-- bootstrap css cdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<body>
+	<div id="app">
+		<h1>{{message}}</h1>
+		<ul>
+			<li style="list-style:none;" v-for="todo in todos">{{ todo.id }}) {{ todo.text }}</li>
+
+			<li v-for="count in count">item #{{count}}</li>
+		</ul>
+	</div>
+	
+	<!-- vuejs cdn -->
+	<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+	
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: "Hello World",
+				todos: [
+					{ text: 'Learn Vue', id: 1 },
+					{ text: 'Like the video', id: 2 },
+					{ text: 'Subscribe to the channel', id: 3 },
+					{ text: 'Learn Vue', id: 1 },
+					{ text: 'Like the video', id: 2 },
+					{ text: 'Subscribe to the channel', id: 3 },
+					{ text: 'Learn Vue', id: 1 },
+					{ text: 'Like the video', id: 2 },
+					{ text: 'Subscribe to the channel', id: 3 },
+					{ text: 'Learn Vue', id: 1 },
+					{ text: 'Like the video', id: 2 },
+					{ text: 'Subscribe to the channel', id: 3 },
+					{ text: 'Learn Vue', id: 1 },
+					{ text: 'Like the video', id: 2 },
+					{ text: 'Subscribe to the channel', id: 3 }
+				],
+				count: 1000
+			}
+		});
+	</script>
+</body>
+</html>
