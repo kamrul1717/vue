@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app">
+		<h1>{{ message }}</h1>
+		<p>
+			Visit: <a :href="url">{{ cleanUrl }}</a>
+		</p>
+		<input type="text" class="form-control" v-model="url">
+		<!-- <input type="text" v-model="message"> -->
+
+		<!-- Can replace v-on: by @ -->
+		<button @click="humanizeUrl" class="btn btn-primary">Humanize Me!</button>
+	</div>
+
+	<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue World',
+				url: "",
+				cleanUrl: ""
+			},
+			methods: {
+			 	humanizeUrl: function(){
+			 		this.cleanUrl = this.url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+			 	}
+			}
+		});
+	</script>
+</body>
+</html>
