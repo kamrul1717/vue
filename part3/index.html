@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+
+	 <!-- bootstrap css cdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<style>
+		[v-cloak]{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<h1 :title="title">{{message}}</h1>
+		<img :src="url" :alt="title" :title="title">
+	</div>
+	
+	<!-- vuejs cdn -->
+	<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+	
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: "Hello World",
+				title: "You loaded the page on " + new Date(),
+				url: "http://vuejs.org/images/logo.png"
+			}
+		});
+	</script>
+</body>
+</html>
